@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/firstFragment"
-        android:title="Home"/>
+        android:id="@+id/notesFragment"
+        android:icon="@drawable/ic_note"
+        android:title="" />
     <item
-        android:id="@+id/secondFragment"
-        android:title="Profile"/>
+        android:id="@+id/remindersFragment"
+        android:icon="@drawable/ic_reminder"
+        android:title="" />
     <item
-        android:id="@+id/thirdFragment"
-        android:title="Settings"/>
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="" />
 </menu>

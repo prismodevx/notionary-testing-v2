@@ -1,37 +1,35 @@
 package com.example.testingfragment;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 
-public class CustomDialogFragment extends DialogFragment {
-
+public class AjustesFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_custom_dialog, container, false);
+        return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Material_Dialog_Alert);
+//        setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Material_Dialog_Alert);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.Theme_Dialog);
     }
 
     @Override
@@ -52,7 +50,15 @@ public class CustomDialogFragment extends DialogFragment {
         Animation slideIn = AnimationUtils.loadAnimation(getContext(), R.anim.slide_in_right);
         view.startAnimation(slideIn);
 
-        Button closeButton = view.findViewById(R.id.btn_close);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+
+        // Desactivar el título del Toolbar
+        if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
+        ImageButton closeButton = view.findViewById(R.id.btn_back);
         closeButton.setOnClickListener(v -> {
             Animation slideOut = AnimationUtils.loadAnimation(getContext(), R.anim.slide_out_right);
             slideOut.setAnimationListener(new Animation.AnimationListener() {

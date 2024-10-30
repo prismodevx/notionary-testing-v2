@@ -21,55 +21,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this, R.id.fragment);
         NavOptions.Builder optionsBuilder = new NavOptions.Builder()
                 .setLaunchSingleTop(true)
-//                .setEnterAnim(R.anim.slide_in_right)
-//                .setExitAnim(R.anim.slide_out_left)
-//                .setPopEnterAnim(R.anim.slide_in_left)
-//                .setPopExitAnim(R.anim.slide_out_right)
                 .setPopUpTo(navController.getGraph().getStartDestinationId(), false);
-//                .build();
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             NavOptions options;
-            if(item.getItemId() == R.id.firstFragment) {
+            if(item.getItemId() == R.id.notesFragment) {
                 options = optionsBuilder
-                        .setEnterAnim(R.anim.slide_in_left)   // Enter from left
-                        .setExitAnim(R.anim.slide_out_right)  // Exit to right
-                        .setPopEnterAnim(R.anim.slide_in_right) // Coming back, enter from right
-                        .setPopExitAnim(R.anim.slide_out_left) // Exit to left
                         .build();
-                navController.navigate(R.id.firstFragment, null, options);
+                navController.navigate(R.id.notesFragment, null, options);
                 return true;
             }
-            if(item.getItemId() == R.id.secondFragment) {
+            if(item.getItemId() == R.id.remindersFragment) {
                 options = optionsBuilder
-                        .setEnterAnim(R.anim.slide_in_right)  // Enter from right
-                        .setExitAnim(R.anim.slide_out_left)   // Exit to left
-                        .setPopEnterAnim(R.anim.slide_in_left) // Coming back, enter from left
-                        .setPopExitAnim(R.anim.slide_out_right) // Exit to right
                         .build();
-                navController.navigate(R.id.secondFragment, null, options);
+                navController.navigate(R.id.remindersFragment, null, options);
                 return true;
             }
-            if(item.getItemId() == R.id.thirdFragment) {
+            if(item.getItemId() == R.id.settingsFragment) {
                 options = optionsBuilder
-                        .setEnterAnim(R.anim.slide_in_right)  // Enter from right
-                        .setExitAnim(R.anim.slide_out_left)   // Exit to left
-                        .setPopEnterAnim(R.anim.slide_in_left) // Coming back, enter from left
-                        .setPopExitAnim(R.anim.slide_out_right) // Exit to right
                         .build();
-                navController.navigate(R.id.thirdFragment, null, options);
+                navController.navigate(R.id.settingsFragment, null, options);
                 return true;
             }
             return true;
         });
-
-//        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }

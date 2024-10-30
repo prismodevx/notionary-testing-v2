@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado cuando se presiona -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#E0E0E0"/> <!-- Color cuando se presiona -->
+            <corners android:radius="16dp"/> <!-- Ajusta el radio si quieres esquinas redondeadas -->
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF"/> <!-- Color normal -->
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+</selector>

@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class FirstFragment extends Fragment {
+public class NotesFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_notes, container, false);
 
         FloatingActionButton fabOpenFullscreen = view.findViewById(R.id.fab);
         fabOpenFullscreen.setOnClickListener(v -> {
@@ -28,5 +28,4 @@ public class FirstFragment extends Fragment {
 
         return view;
     }
-
 }

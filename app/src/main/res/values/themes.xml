@@ -7,6 +7,12 @@
 
     <style name="Theme.Testingfragment" parent="Base.Theme.Testingfragment" />
 
+    <style name="Theme.Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.25</item>
+    </style>
+
     <style name="ThemeOverlay.Testingfragment.FullscreenContainer" parent="">
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
